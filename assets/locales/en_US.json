@@ -1,0 +1,67 @@
+{
+    "tab": {
+        "home": "Home",
+        "project": "Project",
+        "wechat": "WeChat",
+        "structure": "Structure"
+    },
+    "structure":{
+        "stru":"Structure",
+        "navigation":"Navigation"
+    },
+    "status": {
+        "no_data": "no data ~",
+        "refresh": "click refresh ~",
+        "no_net": "the current network is unavailable ~",
+        "unkown_error": "unknown error ~"
+    },
+    "home": {
+        "square": "Square",
+        "recommend": "Recommend",
+        "answers": "Answers"
+    },
+    "drawer": {
+        "my_integral": "My Integral",
+        "cur_integral": "Current Integral",
+        "my_collection": "My Collection",
+        "my_article": "My Article",
+        "todo": "TODO",
+        "open_web": "Open Web",
+        "system_settings": "System Settings"
+    },
+    "tips": {
+        "login": "Please login first",
+        "user_empty": "User name cannot be empty!",
+        "password_empty": "Password cannot be empty!",
+        "error":"Tips",
+        "loading_error":"fail to load!",
+        "to_register":"no user? to register"
+    },
+    "ranking": "Ranking",
+    "login": "Login",
+    "register": "Register",
+    "user": "user",
+    "password": "password",
+    "confirm_password": "confirm password",
+    "forgot_password": "Forgot Password? ",
+    "go_back": "Go Back",
+
+    "easy_refresh":{
+        "pushToLoad":"Pull to load",
+        "releaseToLoad":"Release to load",
+        "loading":"Loading...",
+        "loaded":"Load completed",
+        "loadFailed":"Load failed",
+        
+        "pullToRefresh":"Pull to refresh",
+        "releaseToRefresh":"Release to refresh",
+        "refreshing":"Refreshing...",
+        "refreshed":"Refresh completed",
+        "refreshFailed":"Refresh failed",
+
+        "noMore":"No more",
+        "updateAt":"Update at %T"
+
+    },
+    "article_tag_top":"Top"
+}

@@ -1,0 +1,66 @@
+{
+    "tab": {
+        "home": "主页",
+        "project": "项目",
+        "wechat": "公众号",
+        "structure": "体系"
+    },
+    "structure":{
+        "stru":"体系",
+        "navigation":"导航"
+    },
+    "status": {
+        "no_data": "暂无数据哦",
+        "refresh": "点击刷新",
+        "no_net": "当前网络不可用",
+        "unkown_error": "未知错误"
+    },
+    "home": {
+        "square": "广场",
+        "recommend": "推荐",
+        "answers": "问答"
+    },
+    "drawer": {
+        "my_integral": "我的积分",
+        "cur_integral": "当前积分",
+        "my_collection": "我的收藏",
+        "my_article": "我的文章",
+        "todo": "TODO",
+        "open_web": "开源网站",
+        "system_settings": "系统设置"
+    },
+    "tips": {
+        "login": "请先登录",
+        "user_empty": "用户名不能为空！",
+        "password_empty": "密码不能为空！",
+        "error":"提示",
+        "loading_error":"加载失败！",
+        "to_register":"没有用户？注册"
+    },
+    "ranking": "排名",
+    "login": "登录",
+    "register": "注册",
+    "user": "用户名",
+    "password": "密码",
+    "confirm_password": "确认密码",
+    "forgot_password": "忘记密码？",
+    "go_back": "返回",
+    "easy_refresh":{
+        "pushToLoad":"拉动加载",
+        "releaseToLoad":"释放加载",
+        "loading":"正在加载...",
+        "loaded":"加载完成",
+        "loadFailed":"加载失败",
+        
+        "pullToRefresh":"拉动刷新",
+        "releaseToRefresh":"释放刷新",
+        "refreshing":"正在刷新...",
+        "refreshed":"刷新完成",
+        "refreshFailed":"刷新失败",
+
+        "noMore":"没有更多数据",
+        "updateAt":"更新于 %T"
+
+    },
+    "article_tag_top":"置顶"
+}

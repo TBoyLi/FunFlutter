@@ -1,10 +1,12 @@
 import 'package:fun_flutter/app/modules/bindings/collect_binding.dart';
 import 'package:fun_flutter/app/modules/bindings/project_binding.dart';
 import 'package:fun_flutter/app/modules/bindings/project_list_binding.dart';
+import 'package:fun_flutter/app/modules/controllers/my_article_controller.dart';
 import 'package:fun_flutter/app/modules/pages/article/article_category_tab_page.dart';
 import 'package:fun_flutter/app/modules/pages/article/article_detail_page.dart';
 import 'package:fun_flutter/app/modules/pages/collect/collect_page.dart';
 import 'package:fun_flutter/app/modules/pages/article/article_list_page.dart';
+import 'package:fun_flutter/app/modules/pages/my_article/my_article_page.dart';
 import 'package:fun_flutter/app/modules/pages/project/project_page.dart';
 import 'package:get/get.dart';
 
@@ -49,12 +51,19 @@ class AppPages {
     GetPage(
       name: _Paths.COLLECT,
       page: () => const CollectPage(),
-      binding: CollectBinding(),
+      // binding: CollectBinding(),
     ),
     GetPage(
       name: _Paths.ARTICLE_CATEGORY_TAB,
       page: () => const ArticleCategoryTabPage(),
     ),
-    GetPage(name: _Paths.ARTICLE_DETAIL, page: () => const ArticleDetailPage())
+    GetPage(
+      name: _Paths.ARTICLE_DETAIL,
+      page: () => const ArticleDetailPage(),
+    ),
+    GetPage(
+      name: _Paths.MY_ARTICLE,
+      page: () => MyArticlePage(),
+    ),
   ];
 }

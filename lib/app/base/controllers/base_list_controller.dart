@@ -17,7 +17,7 @@ abstract class BaseListController<T> extends BaseController {
   // 下拉刷新
   void onRefresh({bool init = false}) async {
     try {
-      List<T?> data = await loadData();
+      var data = await loadData();
       if (data.isEmpty) {
         list.clear();
         loadState = LoadState.kEmpty;
@@ -28,15 +28,24 @@ abstract class BaseListController<T> extends BaseController {
         loadState = LoadState.kDone;
       }
       update();
+      // return data;
     } catch (error, stackTrace) {
+      /// 页面已经加载了数据,如果刷新报错,不应该直接跳转错误页面
+      /// 而是显示之前的页面数据.给出错误提示
       if (init) list.clear();
-      loadState = LoadState.kFailure;
       if (error is ResultException) {
         errorMessage = error.message ?? 'status_unkown_error'.tr;
+        if (error.code == -1001) {
+          loadState = LoadState.kLogin;
+        }
+      } else {
+        errorMessage = error.toString();
+        loadState = LoadState.kFailure;
       }
       update();
       debugPrint('error--->\n' + error.toString());
-      debugPrint('statck--->\n' + error.toString());
+      debugPrint('statck--->\n' + stackTrace.toString());
+      // return null;
     }
   }
 

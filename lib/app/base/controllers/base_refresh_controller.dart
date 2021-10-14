@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-// import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:fun_flutter/app/components/state_pages.dart';
 import 'package:fun_flutter/app/net/interceptor/api_interceptor.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
@@ -20,10 +19,6 @@ abstract class BaseRefeshController<T> extends BaseListController<T> {
   final EasyRefreshController _refreshController = EasyRefreshController();
   EasyRefreshController get refreshController => _refreshController;
 
-  // final RefreshController _refreshController =
-  //     RefreshController(initialRefresh: false);
-  // RefreshController get refreshController => _refreshController;
-
   /// 下拉刷新
   ///
   /// [init] 是否是第一次加载
@@ -36,7 +31,6 @@ abstract class BaseRefeshController<T> extends BaseListController<T> {
       var data = await loadData(pageNum: pageZero);
       if (data.isEmpty) {
         _refreshController.finishRefresh(noMore: true);
-        // refreshController.refreshCompleted(resetFooterState: true);
         list.clear();
         loadState = LoadState.kEmpty;
       } else {
@@ -44,7 +38,6 @@ abstract class BaseRefeshController<T> extends BaseListController<T> {
         list.clear();
         list.addAll(data);
         _refreshController.finishRefresh();
-        // refreshController.refreshCompleted();
         loadState = LoadState.kDone;
       }
       update();
@@ -54,7 +47,6 @@ abstract class BaseRefeshController<T> extends BaseListController<T> {
       /// 而是显示之前的页面数据.给出错误提示
       if (init) list.clear();
       _refreshController.finishRefresh();
-      // refreshController.refreshFailed();
       if (error is ResultException) {
         errorMessage = error.message ?? 'status_unkown_error'.tr;
         if (error.code == -1001) {
@@ -62,8 +54,8 @@ abstract class BaseRefeshController<T> extends BaseListController<T> {
         }
       } else {
         errorMessage = error.toString();
+        loadState = LoadState.kFailure;
       }
-      loadState = LoadState.kFailure;
       update();
       debugPrint('error--->\n' + error.toString());
       debugPrint('statck--->\n' + stackTrace.toString());
@@ -78,23 +70,19 @@ abstract class BaseRefeshController<T> extends BaseListController<T> {
       if (data.isEmpty) {
         _currentPageNum--;
         refreshController.finishLoad(noMore: true);
-        // refreshController.loadNoData();
       } else {
         onCompleted(data);
         list.addAll(data);
         if (data.length < pageSize) {
           refreshController.finishLoad(noMore: true);
-          // refreshController.loadNoData();
         } else {
           refreshController.finishLoad();
-          // refreshController.loadComplete();
         }
       }
       update();
     } catch (e, s) {
       _currentPageNum--;
       refreshController.finishLoad(success: false);
-      // refreshController.loadFailed();
       update();
       debugPrint('error--->\n' + e.toString());
       debugPrint('statck--->\n' + s.toString());

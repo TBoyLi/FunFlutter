@@ -5,6 +5,7 @@
         "wechat": "公众号",
         "structure": "体系"
     },
+    "collect":"收藏",
     "structure":{
         "stru":"体系",
         "navigation":"导航"
@@ -62,5 +63,8 @@
         "updateAt":"更新于 %T"
 
     },
-    "article_tag_top":"置顶"
+    "article_tag_top":"置顶",
+    "cancel":"取消",
+    "article":"文章",
+    "site":"网站"
 }

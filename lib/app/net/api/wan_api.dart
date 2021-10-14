@@ -3,6 +3,7 @@ import 'package:fun_flutter/app/model/banner.dart';
 import 'package:fun_flutter/app/model/coin_record.dart';
 import 'package:fun_flutter/app/model/navigation_site.dart';
 import 'package:fun_flutter/app/model/search.dart';
+import 'package:fun_flutter/app/model/site.dart';
 import 'package:fun_flutter/app/model/tree.dart';
 import 'package:fun_flutter/app/model/user.dart';
 import 'package:fun_flutter/app/net/http/http_manager.dart';
@@ -136,7 +137,7 @@ class WanApi {
     await HttpManager.instance.get('lg/todo/listnotdo/0/json/1');
   }
 
-  // 收藏列表
+  // 收藏文章列表
   static Future fetchCollectList(int pageNum) async {
     var response =
         await HttpManager.instance.get('lg/collect/list/$pageNum/json');
@@ -145,12 +146,21 @@ class WanApi {
         .toList();
   }
 
-  // 收藏
+  //收藏网站列表
+  static Future fetchCollectSiteList() async {
+    var response =
+        await HttpManager.instance.get('lg/collect/usertools/json');
+    return response.data
+        .map<Site?>((item) => Site.fromJson(item))
+        .toList();
+  }
+
+  // 收藏文章
   static collect(id) async {
     await HttpManager.instance.post('lg/collect/$id/json');
   }
 
-  // 取消收藏
+  // 取消收藏文章
   static unCollect(id) async {
     await HttpManager.instance.post('lg/uncollect_originId/$id/json');
   }

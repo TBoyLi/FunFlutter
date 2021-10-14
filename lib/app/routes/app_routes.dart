@@ -14,6 +14,7 @@ abstract class Routes {
   static const COLLECT = _Paths.COLLECT;
   static const ARTICLE_CATEGORY_TAB = _Paths.ARTICLE_CATEGORY_TAB;
   static const ARTICLE_DETAIL = _Paths.ARTICLE_DETAIL;
+  static const MY_ARTICLE = _Paths.MY_ARTICLE;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const COLLECT = '/collect';
   static const ARTICLE_CATEGORY_TAB = '/article_category_tab';
   static const ARTICLE_DETAIL = '/article_detail';
+  static const MY_ARTICLE = '/my_article';
 }

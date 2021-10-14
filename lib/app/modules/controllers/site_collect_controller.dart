@@ -1,9 +1,10 @@
-import 'package:fun_flutter/app/base/controllers/base_refresh_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:fun_flutter/app/base/controllers/base_list_controller.dart';
 import 'package:fun_flutter/app/modules/controllers/user_controller.dart';
 import 'package:fun_flutter/app/net/api/wan_api.dart';
 import 'package:get/get.dart';
 
-class SquareController extends BaseRefeshController {
+class SiteCollectController extends BaseListController {
   @override
   void onInit() {
     super.onInit();
@@ -16,12 +17,9 @@ class SquareController extends BaseRefeshController {
     });
   }
 
-
-  @override
-  void onClose() {}
-
   @override
   Future<List> loadData({int? pageNum}) async {
-    return await WanApi.fetchSquares(pageNum ?? 0);
+    debugPrint('加载数据 => loadData');
+    return await WanApi.fetchCollectSiteList();
   }
 }

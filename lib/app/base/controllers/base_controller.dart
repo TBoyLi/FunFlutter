@@ -25,22 +25,30 @@ abstract class BaseController extends GetxController {
     super.onInit();
   }
 
-  void fetch(Future<dynamic> future, bool isLoading,
-      {required Success success, Failure? failure, Done? done}) {
+  //局部刷新必须赋值id
+  void fetch(
+    Future<dynamic> future,
+    bool isLoading, {
+    required Success success,
+    Failure? failure,
+    Done? done,
+    bool refreshItem = false,
+    int id = 0,
+  }) {
     if (isLoading) {
       loadState = LoadState.kLoading;
-      update();
+      refreshItem ? update([id]) : update();
     }
     future.then((value) {
       //请求数据成功，返回请求结果
       success(value);
       loadState = LoadState.kSuccess;
-      update();
+      refreshItem ? update([id]) : update();
     }).onError<ResultException>((error, stackTrace) async {
       //请求失败
       if (isLoading) {
         loadState = LoadState.kFailure;
-        update();
+        refreshItem ? update([id]) : update();
       }
       if (error.code == HttpDioError.LOGIN_CODE) {
         resetUser();
@@ -49,7 +57,7 @@ abstract class BaseController extends GetxController {
         failure(error.message);
       }
       errorMessage = error.message ?? 'status_unkown_error'.tr;
-      update();
+      refreshItem ? update([id]) : update();
     });
   }
 
@@ -57,7 +65,19 @@ abstract class BaseController extends GetxController {
     //重置用户信息
     StorageManager.localStorage.deleteItem(Global.kUser);
     //用户需要登录才能进行操作
-    Get.offAllNamed(Routes.LOGIN);
+    Get.defaultDialog(
+      title: 'login'.tr,
+      content: Text('tips_login'.tr),
+      textConfirm: 'login'.tr,
+      textCancel: 'cancel'.tr,
+      onConfirm: () {
+        Get.back();
+        Future.delayed(const Duration(milliseconds: 500), () {
+          Get.toNamed(Routes.LOGIN);
+        });
+      },
+      onCancel: () {},
+    );
   }
 
   void showError(error) {

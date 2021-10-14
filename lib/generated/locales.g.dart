@@ -15,6 +15,7 @@ class LocaleKeys {
   static const tab_project = 'tab_project';
   static const tab_wechat = 'tab_wechat';
   static const tab_structure = 'tab_structure';
+  static const collect = 'collect';
   static const structure_stru = 'structure_stru';
   static const structure_navigation = 'structure_navigation';
   static const status_no_data = 'status_no_data';
@@ -58,6 +59,9 @@ class LocaleKeys {
   static const easy_refresh_noMore = 'easy_refresh_noMore';
   static const easy_refresh_updateAt = 'easy_refresh_updateAt';
   static const article_tag_top = 'article_tag_top';
+  static const cancel = 'cancel';
+  static const article = 'article';
+  static const site = 'site';
 }
 
 class Locales {
@@ -66,6 +70,7 @@ class Locales {
     'tab_project': '项目',
     'tab_wechat': '公众号',
     'tab_structure': '体系',
+    'collect': '收藏',
     'structure_stru': '体系',
     'structure_navigation': '导航',
     'status_no_data': '暂无数据哦',
@@ -109,12 +114,16 @@ class Locales {
     'easy_refresh_noMore': '没有更多数据',
     'easy_refresh_updateAt': '更新于 %T',
     'article_tag_top': '置顶',
+    'cancel': '取消',
+    'article': '文章',
+    'site': '网站',
   };
   static const en_US = {
     'tab_home': 'Home',
     'tab_project': 'Project',
     'tab_wechat': 'WeChat',
     'tab_structure': 'Structure',
+    'collect': 'Collect',
     'structure_stru': 'Structure',
     'structure_navigation': 'Navigation',
     'status_no_data': 'no data ~',
@@ -158,5 +167,8 @@ class Locales {
     'easy_refresh_noMore': 'No more',
     'easy_refresh_updateAt': 'Update at %T',
     'article_tag_top': 'Top',
+    'cancel': 'Cancel',
+    'article': 'Article',
+    'site': 'Site',
   };
 }

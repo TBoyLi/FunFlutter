@@ -27,6 +27,7 @@ class _SquareViewState extends State<AnswersPage>
       init: controller,
       builder: (_) => StateRefreshWidget<AnswersController>(
         refreshController: controller.refreshController,
+        onPressed: () => controller.initData(),
         onRefresh: () async {
           controller.initData();
         },

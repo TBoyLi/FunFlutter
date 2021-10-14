@@ -1,7 +1,10 @@
 import 'package:fun_flutter/app/base/controllers/base_refresh_controller.dart';
 import 'package:fun_flutter/app/model/article.dart';
 import 'package:fun_flutter/app/model/banner.dart';
+import 'package:fun_flutter/app/modules/controllers/user_controller.dart';
 import 'package:fun_flutter/app/net/api/wan_api.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/state_manager.dart';
 
 class RecommendController extends BaseRefeshController {
   List<Banner?>? _banners;
@@ -15,6 +18,12 @@ class RecommendController extends BaseRefeshController {
   void onInit() {
     super.onInit();
     initData();
+    UserController userController = Get.find<UserController>();
+    ever(userController.hasUser, (bool hasUser) {
+      if (hasUser) {
+        initData();
+      }
+    });
   }
 
   @override

@@ -70,7 +70,7 @@ class Article {
     return articleBean;
   }
 
-  Map toJson() => {
+  Map<String, dynamic> toJson() => {
         "apkLink": apkLink,
         "author": author,
         "shareUser": shareUser,

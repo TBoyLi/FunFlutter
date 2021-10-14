@@ -94,9 +94,12 @@ class CategoryDropdownWidget extends GetView<WechatController> {
               },
               isExpanded: true,
               icon: controller.loadState == LoadState.kLoading
-                  ? const SpinKitCircle(
-                      color: Colors.white,
-                      size: 20.0,
+                  ? const Padding(
+                      padding: EdgeInsets.only(top: 15, right: 5),
+                      child: SpinKitCircle(
+                        color: Colors.white,
+                        size: 20.0,
+                      ),
                     )
                   : const Icon(
                       Icons.keyboard_arrow_down,

@@ -25,6 +25,7 @@ class _SquarePageState extends State<SquarePage>
       init: controller,
       builder: (_) => StateRefreshWidget<SquareController>(
         refreshController: controller.refreshController,
+        onPressed: () => controller.initData(),
         onRefresh: () async {
           controller.initData();
         },
@@ -34,14 +35,14 @@ class _SquarePageState extends State<SquarePage>
         child: CustomScrollView(
           slivers: [
             SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (context, index) => ArticleItemWidget(
-            article: controller.list[index],
-            top: false,
-          ),
-          childCount: controller.list.length,
-        ),
-      ),
+              delegate: SliverChildBuilderDelegate(
+                (context, index) => ArticleItemWidget(
+                  article: controller.list[index],
+                  top: false,
+                ),
+                childCount: controller.list.length,
+              ),
+            ),
           ],
         ),
       ),

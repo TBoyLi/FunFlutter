@@ -27,6 +27,7 @@ class _SquareViewState extends State<RecommendPage>
     final RecommendController controller = Get.put(RecommendController());
     return StateRefreshWidget<RecommendController>(
       refreshController: controller.refreshController,
+      onPressed: () => controller.initData(),
       onLoading: () async {
         controller.onLoad();
       },

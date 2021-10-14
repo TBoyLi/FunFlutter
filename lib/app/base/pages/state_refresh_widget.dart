@@ -15,8 +15,8 @@ class StateRefreshWidget<T extends BaseController> extends GetView<T> {
     this.footer,
     this.failurePage,
     this.emptyPage,
-    this.enablePullDown,
-    this.enablePullUp,
+    this.enableControlFinishRefresh = false,
+    this.enableControlFinishLoad = false,
     Key? key,
     // this.controller,
   }) : super(key: key);
@@ -31,8 +31,8 @@ class StateRefreshWidget<T extends BaseController> extends GetView<T> {
   final Footer? footer;
   final Widget? failurePage;
   final Widget? emptyPage;
-  final bool? enablePullDown;
-  final bool? enablePullUp;
+  final bool enableControlFinishRefresh;
+  final bool enableControlFinishLoad;
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +62,8 @@ class StateRefreshWidget<T extends BaseController> extends GetView<T> {
           controller: refreshController,
           onRefresh: onRefresh,
           onLoad: onLoading,
+          enableControlFinishLoad: enableControlFinishLoad,
+          enableControlFinishRefresh: enableControlFinishRefresh,
           header: header ??
               ClassicalHeader(
                 refreshText: 'easy_refresh_pullToRefresh'.tr,

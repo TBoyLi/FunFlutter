@@ -3,7 +3,7 @@ import 'package:fun_flutter/app/modules/controllers/user_controller.dart';
 import 'package:fun_flutter/app/net/api/wan_api.dart';
 import 'package:get/get.dart';
 
-class SquareController extends BaseRefeshController {
+class ArticleCollectController extends BaseRefeshController {
   @override
   void onInit() {
     super.onInit();
@@ -16,12 +16,8 @@ class SquareController extends BaseRefeshController {
     });
   }
 
-
-  @override
-  void onClose() {}
-
   @override
   Future<List> loadData({int? pageNum}) async {
-    return await WanApi.fetchSquares(pageNum ?? 0);
+    return await WanApi.fetchCollectList(pageNum ?? 0);
   }
 }

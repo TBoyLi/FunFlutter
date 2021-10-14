@@ -95,8 +95,9 @@ class LoginPage extends GetView<LoginController> {
                             },
                             padding: const EdgeInsets.symmetric(vertical: 15),
                             color: Theme.of(context).primaryColor,
-                            child: GetBuilder(init: controller, builder: 
-                              (_) => controller.loadState ==
+                            child: GetBuilder(
+                              init: controller,
+                              builder: (_) => controller.loadState ==
                                       LoadState.kLoading
                                   ? const CircularProgressIndicator(
                                       color: Colors.white,

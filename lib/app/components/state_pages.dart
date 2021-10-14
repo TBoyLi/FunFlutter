@@ -149,7 +149,7 @@ class LoginErrorPage extends StatelessWidget {
                 style: Theme.of(context).textTheme.subtitle1),
             const Padding(padding: EdgeInsets.only(top: 10)),
             OutlinedButton(
-              child: Text("tips_login".tr,
+              child: Text("login".tr,
                   style: const TextStyle(color: Colors.blue, fontSize: 15)),
               onPressed: () => Get.toNamed(Routes.LOGIN),
             )

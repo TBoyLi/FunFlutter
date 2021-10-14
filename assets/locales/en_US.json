@@ -5,9 +5,10 @@
         "wechat": "WeChat",
         "structure": "Structure"
     },
-    "structure":{
-        "stru":"Structure",
-        "navigation":"Navigation"
+    "collect": "Collect",
+    "structure": {
+        "stru": "Structure",
+        "navigation": "Navigation"
     },
     "status": {
         "no_data": "no data ~",
@@ -33,9 +34,9 @@
         "login": "Please login first",
         "user_empty": "User name cannot be empty!",
         "password_empty": "Password cannot be empty!",
-        "error":"Tips",
-        "loading_error":"fail to load!",
-        "to_register":"no user? to register"
+        "error": "Tips",
+        "loading_error": "fail to load!",
+        "to_register": "no user? to register"
     },
     "ranking": "Ranking",
     "login": "Login",
@@ -45,23 +46,22 @@
     "confirm_password": "confirm password",
     "forgot_password": "Forgot Password? ",
     "go_back": "Go Back",
-
-    "easy_refresh":{
-        "pushToLoad":"Pull to load",
-        "releaseToLoad":"Release to load",
-        "loading":"Loading...",
-        "loaded":"Load completed",
-        "loadFailed":"Load failed",
-        
-        "pullToRefresh":"Pull to refresh",
-        "releaseToRefresh":"Release to refresh",
-        "refreshing":"Refreshing...",
-        "refreshed":"Refresh completed",
-        "refreshFailed":"Refresh failed",
-
-        "noMore":"No more",
-        "updateAt":"Update at %T"
-
+    "easy_refresh": {
+        "pushToLoad": "Pull to load",
+        "releaseToLoad": "Release to load",
+        "loading": "Loading...",
+        "loaded": "Load completed",
+        "loadFailed": "Load failed",
+        "pullToRefresh": "Pull to refresh",
+        "releaseToRefresh": "Release to refresh",
+        "refreshing": "Refreshing...",
+        "refreshed": "Refresh completed",
+        "refreshFailed": "Refresh failed",
+        "noMore": "No more",
+        "updateAt": "Update at %T"
     },
-    "article_tag_top":"Top"
+    "article_tag_top": "Top",
+    "cancel": "Cancel",
+    "article": "Article",
+    "site": "Site"
 }
